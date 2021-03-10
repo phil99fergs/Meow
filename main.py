@@ -1,20 +1,24 @@
-# Spēles apraksts
+# Spēles apkrasts
 # Žans Kristians Cepeļevs
 # Datums, vieta
 
 # Importē random libary
 # Importē math libary
 
+import math
+import random
+
+
 
 def game_function():
     # User input skailtim no kura(min) līdz kuram(max) tiks izvēlēts nejaušs skaitlis, kas jāuzmin
     # Ievadi attiecīgu tekstu, lai lietotājs saprot, ka lower ir min un upper max
-    lower = int(input(":- "))
-    upper = int(input(":- "))
+    lower = int(input("Ievadi skaitli no kura sāksim spēli :- "))
+    upper = int(input("Ievadi skaitli uz kura beigsies spēle(lielāks par iepriekšējo) :- "))
 
     # Tiek nejauši izvēlēts random skaitlis no lietotāja izvēlētā apgabala, kas būs skaitlis, kas jāuzmin
     # __________ vietā ieraksti vajadzīgo library
-    x = _______.randint(lower, upper)
+    x = random.randint(lower, upper)
 
     # Attiecīgi norādītajam apgabalam tiek izrēķināts atbilstošs mēģinājumu skaits
     print("\n\tTev ir tikai ", round(math.log(upper - lower + 1, 2)),
@@ -27,12 +31,12 @@ def game_function():
         count += 1
         guess = int(input("Uzmini skaitli:- "))
         # __ ievadi ar kuru mainīgo tiks salīdzināts guess
-        if __ == guess:
+        if x == guess:
             print("Apsveicu, Tu uzvarēji ar ", count, " mēģinājumiem")
             break
-        elif __ > guess:
+        elif x > guess:
             print("Tavs minējums ir pārāk mazs!")
-        elif __ < guess:
+        elif x < guess:
             print("Tavs minējums ir pārāk liels!")
 
     if count >= math.log(upper - lower + 1, 2):
@@ -41,6 +45,8 @@ def game_function():
 
     return 0
 
+if __name__ == '__main__':
+    game_function()
 
 def welcome_text(text):
     print(f'Hi, {text}')
@@ -49,4 +55,5 @@ def welcome_text(text):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    welcome_text("kā iet?")
 # Izsauc welcome_text funkciju un parametros norādi izprintējamo tekstu
